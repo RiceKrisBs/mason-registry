@@ -1,0 +1,22 @@
+---
+name: gitlab-ci-ls
+description: Language server for Gitlab CI (RiceKrisBs fork).
+homepage: https://github.com/RiceKrisBs/gitlab-ci-ls
+licenses:
+  - MIT
+languages:
+  - YAML
+categories:
+  - LSP
+
+source:
+  id: pkg:cargo/gitlab-ci-ls@466d2cec4f2576f923440ccf525939d605e609db?repository_url=https://github.com/RiceKrisBs/gitlab-ci-ls&rev=true
+
+schemas:
+  lsp: vscode:https://raw.githubusercontent.com/RiceKrisBs/gitlab-ci-ls/{{version}}/vscode-extension/package.json
+
+bin:
+  gitlab-ci-ls: cargo:gitlab-ci-ls
+
+neovim:
+  lspconfig: gitlab_ci_ls
