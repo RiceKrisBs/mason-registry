@@ -1,6 +1,6 @@
 ---
 name: gitlab-ci-ls
-description: Language server for Gitlab CI (RiceKrisBs fork).
+description: Language server for GitLab CI (RiceKrisBs fork with template includes and !reference navigation).
 homepage: https://github.com/RiceKrisBs/gitlab-ci-ls
 licenses:
   - MIT
