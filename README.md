@@ -10,7 +10,7 @@ Personal [Mason](https://github.com/mason-org/mason.nvim) registry. Packages her
 
 ## Usage
 
-Requires a Rust toolchain (`cargo`); Mason builds the package from source. On Linux, `libssl-dev` and `pkg-config` are also required.
+`gitlab-ci-ls` ships a prebuilt binary for Apple Silicon macOS only. No Rust toolchain is needed.
 
 ```lua
 require("mason").setup({
@@ -25,4 +25,4 @@ Then `:MasonInstall gitlab-ci-ls`. The registry must come first, otherwise the u
 
 ## Updating a package
 
-Edit `source.id` in `packages/<name>/package.yaml` and push to `main`. The release workflow publishes `registry.json.zip` when anything under `packages/` changes. Mason users pick it up on their next registry update.
+Tag a release in the package's repo, wait for its release workflow to attach the binary, then update the version in `source.id` in `packages/<name>/package.yaml` and push to `main`. The release workflow publishes `registry.json.zip` when anything under `packages/` changes. Mason users pick it up on their next registry update.

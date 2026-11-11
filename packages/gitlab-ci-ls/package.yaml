@@ -10,13 +10,17 @@ categories:
   - LSP
 
 source:
-  id: pkg:cargo/gitlab-ci-ls@466d2cec4f2576f923440ccf525939d605e609db?repository_url=https://github.com/RiceKrisBs/gitlab-ci-ls&rev=true
+  id: pkg:github/RiceKrisBs/gitlab-ci-ls@v1.4.0-kb.1
+  asset:
+    - target: darwin_arm64
+      file: gitlab-ci-ls-aarch64-apple-darwin.tar.gz
+      bin: gitlab-ci-ls
 
 schemas:
   lsp: vscode:https://raw.githubusercontent.com/RiceKrisBs/gitlab-ci-ls/{{version}}/vscode-extension/package.json
 
 bin:
-  gitlab-ci-ls: cargo:gitlab-ci-ls
+  gitlab-ci-ls: "{{source.asset.bin}}"
 
 neovim:
   lspconfig: gitlab_ci_ls
